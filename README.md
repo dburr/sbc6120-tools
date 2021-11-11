@@ -12,6 +12,9 @@ Most Linux distributions should have these, if not installed by default, then so
 repository. Unfortunately they do NOT work on OS X, as OS X is completely missing the `blockdev` command,
 and its `stat` command uses a different syntax than the Linux variant.
 
+**You will most likely need to run these commands as the `root` user.** Most Linux/Unix distros come with
+the `sudo` command that makes this relatively easy. E.g. `sudo ./from_sbc.sh /dev/sdc 0001 system_backup.img`
+
 ### `from_sbc.sh [device] [partition] [output_image_file]`
 
 Copies a partition from an SBC6120 format drive into an image file. `partition` must be specified in octal.
