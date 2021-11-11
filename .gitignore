@@ -3,3 +3,7 @@
 
 # ignore vim backups
 *~
+
+# don't check in any SBC6120 images I may have stashed here temporarily
+*.img
+
