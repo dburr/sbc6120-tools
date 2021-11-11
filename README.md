@@ -9,8 +9,8 @@ boot to Windows. So I hacked up my own set of tools. :)
 
 These tools should work on most Unix/Linux systems. The commands `blockdev`, `stat`, `dd` and `pv` are required.
 Most Linux distributions should have these, if not installed by default, then somewhere in their package
-repository. Unfortunately it does NOT work on OS X, as OS X is completely missing the `blockdev` command,
-and its `stat` command uses a different syntax than the Linux `stat` command.
+repository. Unfortunately they do NOT work on OS X, as OS X is completely missing the `blockdev` command,
+and its `stat` command uses a different syntax than the Linux variant.
 
 ### `from_sbc.sh [device] [partition] [output_image_file]`
 
