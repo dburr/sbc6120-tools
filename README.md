@@ -25,8 +25,8 @@ disk at `/dev/sdc` to a file named `system_backup.img`.
 Writes an image file to a given partition of an SBC6120 format drive. `partition` must be specified in octal.
 This is roughly equivalent to Steve's `WinToAta` tool.
 
-Example: `to_sbc.sh games.img /dev/sdc 0010` writes the contents of the file `games.img` to  partition `0010`
-onto the SBC6120 formatted disk at `/dev/sdc`.
+Example: `to_sbc.sh games.img /dev/sdc 0010` writes the contents of the file `games.img` onto partition `0010`
+of the SBC6120 formatted disk at `/dev/sdc`.
 
 # NOTES
 
