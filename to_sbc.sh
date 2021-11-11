@@ -87,17 +87,4 @@ C=$((PART_SIZE / $BLK_SIZE))
 dd if="$FILE" bs=$BLK_SIZE 2>/dev/null | pv -s $PART_SIZE | dd of="$DEVICE" bs=$BLK_SIZE seek=$OFFSET 2>/dev/null
 sync;sync;sync;sync;sync
 
-
 echo "Done!"
-
-
-
-
-
-
-
-
-
-
-
-
