@@ -7,7 +7,7 @@ but unfortunately they are incompatible with Windows 10+, and I couldn't get the
 Besides which, I'm a Linux guy, and I'd rather do as much as possible in Linux and not have to run VMs or
 boot to Windows. So I hacked up my own set of tools. :)
 
-These tools should work on most Unix/Linux systems. The commands `blockdev`, `stat` and `pv` are required.
+These tools should work on most Unix/Linux systems. The commands `blockdev`, `stat`, `dd` and `pv` are required.
 Most Linux distributions should have these, if not installed by default, then somewhere in their package
 repository. Unfortunately it does NOT work on OS X, as OS X is completely missing the `blockdev` command,
 and its `stat` command uses a different syntax than the Linux `stat` command.
