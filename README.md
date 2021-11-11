@@ -17,10 +17,16 @@ and its `stat` command uses a different syntax than the Linux variant.
 Copies a partition from an SBC6120 format drive into an image file. `partition` must be specified in octal.
 This is roughly equivalent to Steve's `AtaToWin` tool.
 
+Example: `from_sbc.sh /dev/sdc 0001 system_backup.img` writes partition `0001` from the SBC6120 formatted
+disk at `/dev/sdc` to a file named `system_backup.img`.
+
 ### `to_sbc.sh [image_file] [device] [partition]`
 
 Writes an image file to a given partition of an SBC6120 format drive. `partition` must be specified in octal.
 This is roughly equivalent to Steve's `WinToAta` tool.
+
+Example: `to_sbc.sh games.img /dev/sdc 0010` writes the contents of the file `games.img` to  partition `0010`
+onto the SBC6120 formatted disk at `/dev/sdc`.
 
 # NOTES
 
