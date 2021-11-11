@@ -3,7 +3,7 @@ A set of tools for reading/writing image files for the Spare Time Gizmos SBC6120
 
 I needed a way to set up the CF card of my newly built [SBC6120](http://www.sparetimegizmos.com/Hardware/SBC6120-2.htm)
 single-board computer. Steve Gibson has an excellent set of [SBC6120 Windows utilities](https://www.grc.com/pdp-8/os8utils-sbc.htm)
-but unfortunately they are incompatible with Windows 10+, and I couldn't get them to work properly in a virtual machine.
+but unfortunately they are incompatible with Windows 10+, and I couldn't get them to work properly in an XP virtual machine.
 Besides which, I'm a Linux guy, and I'd rather do as much as possible in Linux and not have to run VMs or
 boot to Windows. So I hacked up my own set of tools. :)
 
