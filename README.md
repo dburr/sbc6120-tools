@@ -8,7 +8,11 @@ and its `stat` command uses a different syntax than the Linux `stat` command.
 
 ### `from_sbc.sh [device] [partition] [output_image_file]`
 
+Copies a partition from an SBC6120 format drive into an image file. `partition` must be specified in octal.
+
 ### `to_sbc.sh [image_file] [device] [partition]`
+
+Writes an image file to a given partition of an SBC6120 format drive. `partition` must be specified in octal.
 
 # TODO
 
