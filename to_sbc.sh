@@ -56,7 +56,16 @@ if [ ! -f "$FILE" ]; then
   exit 1
 fi
 
-DEVSIZE=$(blockdev --getsize64 "$DEVICE")
+if ! [[ $PART_NO =~ ^[0-7]+$ ]]; then
+  echo "ERROR: partition must be specified as octal"
+  exit 1
+fi
+
+if [ -b "$DEVICE" ]; then
+  DEVSIZE=$(blockdev --getsize64 "$DEVICE")
+else
+  DEVSIZE=$(stat -c %s "$DEVICE")
+fi
 FILESIZE=$(stat -c %s "$FILE")
 
 echo "device size is $DEVSIZE"
@@ -84,7 +93,7 @@ echo "part_size=$PART_SIZE"
 C=$((PART_SIZE / $BLK_SIZE))
 
 #dd if="$DEVICE" bs=$BLK_SIZE skip=$OFFSET count=$C 2>/dev/null | pv -s $PART_SIZE | dd of="$FILE" bs=$BLK_SIZE 2>/dev/null
-dd if="$FILE" bs=$BLK_SIZE 2>/dev/null | pv -s $PART_SIZE | dd of="$DEVICE" bs=$BLK_SIZE seek=$OFFSET 2>/dev/null
+dd if="$FILE" bs=$BLK_SIZE 2>/dev/null | pv -s $PART_SIZE | dd of="$DEVICE" bs=$BLK_SIZE seek=$OFFSET conv=notrunc 2>/dev/null
 sync;sync;sync;sync;sync
 
 echo "Done!"
