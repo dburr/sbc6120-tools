@@ -57,6 +57,11 @@ else
   DEVSIZE=$(stat -c %s "$DEVICE")
 fi
 
+if ! [[ $PART_NO =~ ^[0-7]+$ ]]; then
+  echo "ERROR: partition must be specified as octal"
+  exit 1
+fi
+
 echo "partition number is $PART_NO"
 PART_DEC=$((8#$PART_NO))
 echo "in decimal that's $PART_DEC"
